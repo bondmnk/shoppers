@@ -29,6 +29,7 @@ public class LoginModelTest extends BaseClass {
     public  void FirstTestCaseTest() throws IOException, Throwable {		
 		HomePageAfterLoginTest HmAL = new HomePageAfterLoginTest(driver);
 	HmAL.getMenMenuLink().click();
+	System.out.println("sirs repo");
 	}
 	
 	
