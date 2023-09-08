@@ -17,7 +17,7 @@ public class LoginModel extends BaseClass{
 WebDriver driver1 = new ChromeDriver();
 	driver1.get("https://www.facebook.com/");
 	driver1.quit();
-		System.out.println("First test case");
+		System.out.println("First test case  just now added");
 		driver1.quit();
 	}
 	@Test
