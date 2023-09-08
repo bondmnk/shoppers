@@ -12,14 +12,13 @@ public class LoginModel extends BaseClass{
 
 	@Test
 	public void Tc_Login_001() {
-		//WebDriverBrowser driver;
-		//WebDriverManager.chromedriver().setup();
-//		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-//WebDriver driver = new ChromeDriver();
-//		driver.get("https://www.facebook.com/");
-//		driver.quit();
+		WebDriverBrowser driver;
+		WebDriverManager.chromedriver().setup();		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+WebDriver driver1 = new ChromeDriver();
+	driver1.get("https://www.facebook.com/");
+	driver1.quit();
 		System.out.println("First test case");
-		//driver.quit();
+		driver1.quit();
 	}
 	@Test
 	public void ATc_Login_002() {
