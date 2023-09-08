@@ -29,13 +29,22 @@ public class LoginModelTest extends BaseClass {
     public  void FirstTestCaseTest() throws IOException, Throwable {		
 		HomePageAfterLoginTest HmAL = new HomePageAfterLoginTest(driver);
 	HmAL.getMenMenuLink().click();
+	System.out.println("my test case 1");
 	}
 	
 	
 	@Test(groups= {"smokeTestCase"})
 	public void Tc_Login_002Test() {
 		HomePageAfterLoginTest HmAL = new HomePageAfterLoginTest(driver);
-		HmAL.getWomenMenuLink().click();	 
+		HmAL.getWomenMenuLink().click();	
+		System.out.println("my test case 2");
+	}
+	
+	@Test(groups= {"smokeTestCase"})
+	public void Tc_Login_003Test() {
+		HomePageAfterLoginTest HmAL = new HomePageAfterLoginTest(driver);
+		HmAL.getWomenMenuLink().click();	
+		System.out.println("my test case 3");
 	}
 }
 
