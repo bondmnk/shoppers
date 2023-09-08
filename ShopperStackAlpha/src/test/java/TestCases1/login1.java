@@ -12,6 +12,6 @@ public class login1 extends BaseClass {
 	public void Tc_Login_002() {
 			HomePage homep = new HomePage(driver);
 			homep.getWomenMenuLink().click();
-			
+			System.out.println("done");
 }
 	}
