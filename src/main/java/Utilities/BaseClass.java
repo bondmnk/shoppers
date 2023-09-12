@@ -55,8 +55,7 @@ public class BaseClass {
 	@org.testng.annotations.BeforeMethod
 	public void BeforeMethod() throws Throwable {
 		DataUtilities dataProperties = new DataUtilities();
-		String Email=dataProperties.dataFromExcel("C:\\dataExel\\DataExel.xlsx", "Sheet1", 1, 1);
-		String Pass=dataProperties.dataFromExcel("C:\\dataExel\\DataExel.xlsx", "Sheet1", 1, 2);
+	
 		
 		driver.navigate().refresh();
 		
@@ -65,8 +64,8 @@ public class BaseClass {
 	    
 	    LoginPageTest Lp = new LoginPageTest(driver);
 	    
-	    Lp.getEmailTextField().sendKeys(Email);
-	    Lp.getPassTextField().sendKeys(Pass);
+	    Lp.getEmailTextField().sendKeys("mustkoujalagi@gmail.com");
+	    Lp.getPassTextField().sendKeys("s1615691S@");
 	    Lp.getLoginButton().click();
 		
 	}

@@ -14,8 +14,7 @@ public class ListnersImplementation extends BaseClass implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		
 		 String failedMethod = result.getMethod().getMethodName();
-		 System.out.println(failedMethod);
-		 
+		 System.out.println(failedMethod); 
 		 TakesScreenshot ts	= (TakesScreenshot)driver;
 		File TempFile = ts.getScreenshotAs(OutputType.FILE);
 		File permanentFile=new File("./"+failedMethod+"-Failed.png");
