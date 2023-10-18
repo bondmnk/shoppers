@@ -24,7 +24,7 @@ public class VerifyWomwensModuleTest extends BaseClass{
 	
 	@Test
 	public void Tc_Women_004Test() throws Throwable {
-		System.out.println("Test case 1");
+		System.out.println("Test case 2");
 	}
 	
 }
