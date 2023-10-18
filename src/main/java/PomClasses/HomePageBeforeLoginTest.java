@@ -14,7 +14,7 @@ public class HomePageBeforeLoginTest {
 	}
 	
 	
-	@FindBy(id="loginBtn")
+	@FindBy(xpath  ="//div[text()='Login']")
 	private WebElement loginMainButton;
 
 

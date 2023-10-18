@@ -19,10 +19,10 @@ public class HomePageAfterLoginTest {
 	@FindBy(id="men")
 	private WebElement MenMenuLink;
 	
-	@FindBy(xpath="//*[name()='svg' and @data-testid='SettingsIcon']")
+	@FindBy(xpath="//div[text()='Hi Mustakim']")
 	private WebElement AccountSettingIcon;
 	
-	@FindBy(xpath="//*[name()='svg' and @data-testid='LogoutIcon']")
+	@FindBy(xpath="//div[text()='Log Out']")
 	private WebElement LogoutIcon;
 	
 	@FindBy(id="women")

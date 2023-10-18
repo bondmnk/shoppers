@@ -4,8 +4,13 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import PomClasses.HomePageAfterLoginTest;
 import PomClasses.HomePageBeforeLoginTest;
@@ -17,7 +22,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	
 	
-	@org.testng.annotations.BeforeClass
+	@BeforeClass
 	public void BeforeClass() throws Throwable {
 		
 		DataUtilities dataProperties = new DataUtilities();
@@ -25,7 +30,9 @@ public class BaseClass {
 		
 		if(BROWSER.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
+			ChromeOptions option=new ChromeOptions();
+			option.addArguments("--disable-notifications");
+			driver=new ChromeDriver(option);
 		}
 		else if(BROWSER.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -52,27 +59,27 @@ public class BaseClass {
 		
 	}
 	
-	@org.testng.annotations.BeforeMethod
+	@BeforeMethod
 	public void BeforeMethod() throws Throwable {
 		DataUtilities dataProperties = new DataUtilities();
 	
 		
-		driver.navigate().refresh();
+		
 		
 		HomePageBeforeLoginTest HBL = new HomePageBeforeLoginTest(driver);
 	    HBL.getLoginMainButton().click();
 	    
 	    LoginPageTest Lp = new LoginPageTest(driver);
-	    
-	    Lp.getEmailTextField().sendKeys("mustkoujalagi@gmail.com");
+	    Thread.sleep(3000l);
+	    Lp.getMObileTextField().sendKeys("9353822214");
 	    Lp.getPassTextField().sendKeys("s1615691S@");
 	    Lp.getLoginButton().click();
 		
 	}
 	
-	@org.testng.annotations.AfterMethod
+	@AfterMethod
 	public void AfterMethod() throws Throwable {
-	Thread.sleep(3000);
+	Thread.sleep(6000);
 	HomePageAfterLoginTest HomePageEle = new HomePageAfterLoginTest(driver);
 	HomePageEle.getAccountSettingIcon().click();
 	HomePageEle.getLogoutIcon().click();	
@@ -80,7 +87,7 @@ public class BaseClass {
 	
 	
 	
-	@org.testng.annotations.AfterClass
+	@AfterClass
 	public void AfterClass() {
 		driver.quit();
 	}

@@ -15,19 +15,19 @@ public class LoginPageTest {
 	}
 	
 	
-	@FindBy(id="Email")
-	private WebElement EmailTextField;
+	@FindBy(xpath="//input[@data-testid='user-mobileno-input-box']")
+	private WebElement MObileNumberTextField;
 	
 	
-	@FindBy(id="Password")
+	@FindBy(xpath="//input[@data-testid='password-input-box-cta']")
 	private WebElement PassTextField;
 	
-	@FindBy(xpath="//button[@id='Login']")
+	@FindBy(xpath="//div[@data-testid='login-cta']")
 	private WebElement LoginButton;
 	
 	
-	public WebElement getEmailTextField() {
-		return EmailTextField;
+	public WebElement getMObileTextField() {
+		return MObileNumberTextField;
 	}
 
 	public WebElement getPassTextField() {
